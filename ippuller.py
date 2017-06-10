@@ -33,7 +33,20 @@ class IPpuller():
                             'http://www.iplocation.net/',
                             'http://www.howtofindmyipaddress.com/',
                             'http://www.ipchicken.com/',
-                            'http://whatsmyip.net/']
+                            'http://whatsmyip.net/',
+                            'http://www.ip-address.com/',
+                            'http://checkmyip.com',
+                            'http://www.tracemyip.org/',
+                            'http://www.lawrencegoetz.com/programs/ipinfo/',
+                            'http://www.findmyip.co/',
+                            'http://ip-lookup.net/',
+                            'http://www.dslreports.com/whois',
+                            'http://www.mon-ip.com/en/my-ip/',
+                            'http://www.myip.ru',
+                            'http://ipgoat.com/',
+                            'http://www.myipnumber.com/my-ip-address.asp',
+                            'http://www.whatismyipaddress.net/',
+                            'http://formyip.com/']
 
     def get_external_ip(self):
         """
@@ -52,6 +65,8 @@ class IPpuller():
     def fetch(self, server):
         """
         This function gets your IP from a specific server.
+        In order to do this, this function uses requests to get the content in server_list above.
+        Regex query is then used to grab actual IP number.
         """
         url = None
         opener = requests.get(server)
